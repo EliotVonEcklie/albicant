@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'auth.login')
+    ->name('root');
+
+Route::get('/feed', \App\Http\Livewire\Feed::class)
+    ->name('feed');
+
+Route::view('/watch/live', 'watch.live')
+    ->name('watch.live');
+
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('/home', function () { return view('home');})
+    ->name('home');

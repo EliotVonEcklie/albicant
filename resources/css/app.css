@@ -1,0 +1,16 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@media (min-width: 640px) {
+    .w-fixed {
+        flex: 0 1 230px;
+        min-width: 230px;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply dark:bg-black dark:hover:bg-gray-800 rounded-md box-content p-1;
+    }
+}
